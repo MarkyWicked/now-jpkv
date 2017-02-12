@@ -62,6 +62,11 @@ class listener(object):
                     resp = raw_input()+"\n"
                     connection.sendall(resp)
 
+                elif resp.startswith("status"):
+                        print "Listener running..."
+                        resp = raw_input() + "\n"
+                        connection.sendall(resp)
+
                 else:
                     connection.sendall(resp)
             else:

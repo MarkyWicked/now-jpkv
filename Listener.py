@@ -25,11 +25,11 @@ while True:
         started = True
     elif console == "stop":
         started = False
-    elif console == "status":
+    elif console.startswith("status"):
         if started:
-	     print "Listener running..."
-	else:
-	     print "Listener not running..."
+            print "Listener running..."
+        else:
+            print "Listener not running..."
     elif console == "options":
         print "Set ipaddress:"
         ip = raw_input()
