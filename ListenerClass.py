@@ -32,6 +32,11 @@ class listener(object):
                     print "getFile(url to file) for download file from web."
                     print "download(path to file) for download file from host."
                     print "screenshot for create screenshot."
+                elif resp == "clear\n":
+                    os.system('cls' if os.name == 'nt' else 'clear')
+                    print "***************************************"
+                    print "***************LISTENER****************"
+                    print "***************************************"
                 elif resp == "screenshot\n":
                     connection.sendall(resp)
                     data = connection.recv(4096)
