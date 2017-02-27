@@ -21,6 +21,11 @@ while True:
             notConnected = True
     console = raw_input()
 
+    if notConnected:
+        if console == "help":
+            print "start for start listener.\nstop for stop listener.\nstatus for status.\noptions for " \
+                  "set options.\nexit for exit program\n"
+
     if console == "start":
         started = True
     elif console == "stop":
