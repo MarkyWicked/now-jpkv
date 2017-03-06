@@ -31,12 +31,12 @@ class listener(object):
                     print "admins for administrators.\nusers for users.\nwhelp for windows help.\n"
                     print "getFile(url to file) for download file from web."
                     print "download(path to file) for download file from host."
-                    print "screenshot for create screenshot."
+                    print "screenshot for create screenshot.\n"
                     print "keylogger start for start keylogger."
                     print "keylogger stop for stop keylogger."
                     print "keylogger status for get keyloger status."
                     print "keylogger get for get captured data from keylogger."
-                    print "keylogger live for live keylogging."
+                    print "keylogger live for live keylogging - NOT IMPLEMENTED YET."
                 elif resp == "clear\n":
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print "***************************************"
