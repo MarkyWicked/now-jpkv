@@ -53,6 +53,6 @@ while True:
     elif console == "^X":
         print "test"
     def sigint_handler(signum, frame):
-        print 'Stop pressing the CTRL+C!'
+        print 'Stop pressing the CTRL+C! Type \'exit\' for exit program.'
 
     signal.signal(signal.SIGINT, sigint_handler)

